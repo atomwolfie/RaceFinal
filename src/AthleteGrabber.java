@@ -8,18 +8,7 @@ public class AthleteGrabber implements Subject{
 
     private ArrayList<Observer> observers;
 
-    
-    private int bibNumber;
-
-    private String dateAndTime;
-    
-    private String firstName;
-
-    private String lastName;
-    
-    private String gender;
-    
-    private int age;
+    Athlete athlete = new Athlete();
     
 
     public AthleteGrabber(){
@@ -62,7 +51,7 @@ public class AthleteGrabber implements Subject{
 
         for(Observer observer : observers){
 
-            observer.update(bibNumber, dateAndTime, firstName, lastName, gender, age);
+            observer.update(athlete.getBibNumber(), athlete.getDateandTime(), athlete.getFirstName(), athlete.getLastName(), athlete.getGender(), athlete.getAge());
 
         }
 
@@ -71,65 +60,62 @@ public class AthleteGrabber implements Subject{
     // Change prices for all stocks and notifies observers of changes
 
     public void setBibNumber(int newBibNumber){
-
-       bibNumber = newBibNumber;
-
+       athlete.setBibNumber(newBibNumber);
         notifyObserver();
 
     }
     
     public int getBibNumber(){
-       return bibNumber;
+       return athlete.getBibNumber();
     }
 
     public void setDateandTime(String newDateAndTime){
-        dateAndTime = newDateAndTime;
+        athlete.setDateandTime(newDateAndTime);
         notifyObserver();
     }
     
     public String getDateandTime(){
-    	return dateAndTime;
+    	return athlete.getDateandTime();
     }
 
     
     public void setFirstName(String newFirstName){
 
-        firstName = newFirstName;
-
+    	athlete.setFirstName(newFirstName);
         notifyObserver();
   }
 
    
     public String getFirstName(){
-    	return firstName;
+    	return athlete.getFirstName();
     }
     
     
     public void setLastName(String newLastName){
-        lastName = newLastName;
-        notifyObserver();
+    	athlete.setLastName(newLastName);
+    	notifyObserver();
     }
     
     public String getLastName(){
-    	return lastName;
+    	return athlete.getLastName();
     }
     
     public void setGender(String newGender){
-        gender = newGender;
+    	athlete.setGender(newGender);
         notifyObserver();
     }
     
     public String getGender(){
-    	return gender;
+    	return athlete.getGender();
     }
     
     public void setAge(int newAge){
-        age = newAge;
+    	athlete.setAge(newAge);
         notifyObserver();
     }
 
     public int getAge(){
-    	return age;
+    	return athlete.getAge();
     }
 
 

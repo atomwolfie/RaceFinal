@@ -6,11 +6,7 @@ public class CourseObserver implements Observer {
 
 	Course course = new Course();
 	
-    private int bibNumber;
-
-    private String dateAndTime;
     
-    private double distanceTraveled;
 
     // Static used as a counter
 
@@ -53,7 +49,7 @@ public class CourseObserver implements Observer {
     	
         course.setBibNumber(newBibNumber);
         course.setDateandTime(newDateAndTime);        
-        course.setDistance(distanceTraveled);
+        course.setDistance(newDistanceTraveled);
     
         printCourses();
         
