@@ -1,3 +1,5 @@
+package Race;
+
 import java.util.ArrayList;
 
 public class CourseGrabber implements Subject {
@@ -50,10 +52,7 @@ public class CourseGrabber implements Subject {
 	        // athlete changes
 
 	        for(Observer observer : observers){
-
-
 	            observer.updateCourse(bibNumber, dateAndTime, distanceTraveled);
-
 	        }
 
 	    }
@@ -61,28 +60,32 @@ public class CourseGrabber implements Subject {
 	    // Change prices for all stocks and notifies observers of changes
 
 	    public void setBibNumber(int newBibNumber){
-
-	        this.bibNumber = newBibNumber;
-
+	        bibNumber = newBibNumber;
 	        notifyObserver();
-
 	    }
 
+	    public int getBibNumber(){
+	        return bibNumber;
+	     }
+	    
 	    public void setDateandTime(String newDateAndTime){
-
-	        this.dateAndTime = newDateAndTime;
-
+	        dateAndTime = newDateAndTime;
 	        notifyObserver();
 	    }
+	    
+	    public String getDateandTime(){
+	    	return dateAndTime;
+	    }
+	 
 	    
 	    public void setDistance(double newDistance){
-
-	        this.distanceTraveled = newDistance;
-
+	        distanceTraveled = newDistance;
 	        notifyObserver();
 	    }
 
-	    
+	    public double getDistance(){
+	    	return distanceTraveled;
+	    }
 	   
 
 	    

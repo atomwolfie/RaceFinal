@@ -1,8 +1,10 @@
+package Race;
 
 public class CourseObserver implements Observer {
 
  //int bibNumber, String firstName, String lastName, String gender, int age
 
+	Course course = new Course();
 	
     private int bibNumber;
 
@@ -29,7 +31,7 @@ public class CourseObserver implements Observer {
         // I can make calls to its methods
 
         this.courseGrabber = courseGrabber;
-
+        
         // Assign an observer ID and increment the static counter
 	this.observerID = ++observerIDTracker;
 
@@ -45,22 +47,24 @@ public class CourseObserver implements Observer {
 
     // Called to update all observers
 
-    public void updateCourse(int bibNumber, String dateAndTime, double distanceTraveled) {
+    public void updateCourse(int newBibNumber, String newDateAndTime, double newDistanceTraveled) {
 
-        this.bibNumber = bibNumber;
-
-        this.dateAndTime = dateAndTime;
-        
-       this.distanceTraveled = distanceTraveled;
-       
+    	//set course update type to it updates
+    	
+        course.setBibNumber(newBibNumber);
+        course.setDateandTime(newDateAndTime);        
+        course.setDistance(distanceTraveled);
+    
         printCourses();
-
+        
+        //set course update type back to cant update
+        //course.setUpdateType(newUpdateType);
     }
 
     public void printCourses(){
 
-        System.out.println(observerID + "\nRunner: " + bibNumber + "\nDate and Time: " + dateAndTime 
-        		+ "\nDistance Traveled: " + distanceTraveled + "\n");
+        System.out.println(observerID + "\nRunner: " + course.getBibNumber() + "\nDate and Time: " + course.getDateandTime() 
+        		+ "\nDistance Traveled: " + course.getCourseDistance() + "\n");
 
     }
 

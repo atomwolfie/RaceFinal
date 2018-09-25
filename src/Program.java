@@ -1,3 +1,4 @@
+package Race;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -35,14 +36,14 @@ public class Program {
 		//String userDistance = scan.nextLine();
 		double userDistance = 16093.4;
 	
-		course.tryToUpdate(course, "8/30/18");
-		race.tryToUpdate(race, "8/30/18");
-		System.out.println("Course time: " + course.getDateandTime());
-		System.out.println("Race time: " + race.getDateandTime());
-		
-		course.tryToUpdate(course, "9/18/19");
-		System.out.println("Course time: " + course.getDateandTime());
-		System.out.println("Race time: " + race.getDateandTime());
+//		course.tryToUpdate(course, "8/30/18");
+//		race.tryToUpdate(race, "8/30/18");
+//		System.out.println("Course time: " + course.getDateandTime());
+//		System.out.println("Race time: " + race.getDateandTime());
+//		
+//		course.tryToUpdate(course, "9/18/19");
+//		System.out.println("Course time: " + course.getDateandTime());
+//		System.out.println("Race time: " + race.getDateandTime());
 		
 		try{
 		course.setCourseDistance(userDistance);;		
@@ -85,13 +86,7 @@ public class Program {
 				}
 	}
 	
-  
-//	public static RaceStuff getRace(){return thisRace;}
-//    public void setRace(RaceStuff newRace){
-//    	thisRace = newRace;
-//    	}
 
-	
 	
     public static RaceStuff getCourse(){return course;}
     public void setCourse(RaceStuff newCourse){

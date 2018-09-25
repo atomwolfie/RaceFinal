@@ -1,4 +1,4 @@
-
+package Race;
 // This interface handles adding, deleting and updating
 
 // all observers

@@ -1,49 +1,37 @@
+package Race;
 // Represents each Observer that is monitoring changes in the subject
 
 public class AthleteObserver implements Observer {
 
     //int bibNumber, String firstName, String lastName, String gender, int age
 
-	RaceStuff athelete = new Athlete();
+	Athlete athlete = new Athlete();
 	
-    private int bibNumber;
-
-    private String dateAndTime;
-    
-    private String firstName;
-
-    private String lastName;
-    
-    private String gender;
-    
-    private int age;
 
     // Static used as a counter
-
     private static int observerIDTracker = 0;
 
     // Used to track the observers
-
     private int observerID;
 
     // Will hold reference to the StockGrabber object
 
     private Subject athleteGrabber;
 
-    public AthleteObserver(Subject athleteGrabber){
+    public AthleteObserver(Subject newAthleteGrabber){
 
         // Store the reference to the stockGrabber object so
 
         // I can make calls to its methods
 
-        this.athleteGrabber = athleteGrabber;
+        athleteGrabber = newAthleteGrabber;
 
         // Assign an observer ID and increment the static counter
-	this.observerID = ++observerIDTracker;
+        observerID = ++observerIDTracker;
 
         // Message notifies user of new observer
 
-        System.out.println("New Observer " + this.observerID);
+        System.out.println("New Observer " + observerID);
 
         // Add the observer to the Subjects ArrayList
 
@@ -53,34 +41,41 @@ public class AthleteObserver implements Observer {
 
     // Called to update all observers
 
-    public void update(int bibNumber, String dateAndTime, String firstName, String lastName, String gender, int age) {
+    public void update(int newBibNumber, String newDateAndTime, String newFirstName, String newLastName, String newGender, int newAge) {
 
-        this.bibNumber = bibNumber;
+    	//set athlete update type to cant update
+    	
+        athlete.setBibNumber(newBibNumber);
 
-        this.dateAndTime = dateAndTime;
+        athlete.setDateandTime(newDateAndTime);
+                
+        athlete.setFirstName(newFirstName);
         
-        this.firstName = firstName;
-
-        this.lastName = lastName;
+        athlete.setLastName(newLastName);
         
-        this.gender = lastName;
+        athlete.setGender(newGender);
         
-        this.age = age;
+        athlete.setAge(newAge);
         
-        
-
         printTheAthletes();
 
+        //set athlete update type back to can't update
     }
 
     public void printTheAthletes(){
 
-        System.out.println(observerID + "\nRunner (bib number): " + bibNumber + "\nDate and Time: " + dateAndTime + "\nfirstName: " +
+        System.out.println(observerID + "\nRunner (bib number): " + 
+        
+        athlete.getBibNumber() + "\nDate and Time: " + athlete.getDateandTime() + "\nfirstName: " +
 
-firstName + "\nlastName: " + lastName + "\ngender: " + gender + "\nage: " + age + "\n");
+		athlete.getFirstName() + "\nlastName: " + athlete.getLastName() + 
 
+		"\ngender: " + athlete.getGender() + "\nage: " + athlete.getAge() + "\n");
     }
 
+    
+   
+   
 	@Override
 	public void updateCourse(int bibNumber, String dateAndTime, double distanceTraveled) {
 		// TODO Auto-generated method stub

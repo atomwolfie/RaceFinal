@@ -1,4 +1,6 @@
+package Race;
 import java.util.ArrayList;
+
 
 // Uses the Subject interface to update all Observers
 
@@ -70,54 +72,65 @@ public class AthleteGrabber implements Subject{
 
     public void setBibNumber(int newBibNumber){
 
-        this.bibNumber = newBibNumber;
-
-        notifyObserver();
-
-    }
-
-    public void setDateandTime(String newDateAndTime){
-
-        this.dateAndTime = newDateAndTime;
+       bibNumber = newBibNumber;
 
         notifyObserver();
 
     }
     
+    public int getBibNumber(){
+       return bibNumber;
+    }
+
+    public void setDateandTime(String newDateAndTime){
+        dateAndTime = newDateAndTime;
+        notifyObserver();
+    }
+    
+    public String getDateandTime(){
+    	return dateAndTime;
+    }
 
     
     public void setFirstName(String newFirstName){
 
-        this.firstName = newFirstName;
+        firstName = newFirstName;
 
         notifyObserver();
   }
 
+   
+    public String getFirstName(){
+    	return firstName;
+    }
+    
     
     public void setLastName(String newLastName){
-
-        this.lastName = newLastName;
-
+        lastName = newLastName;
         notifyObserver();
-
+    }
+    
+    public String getLastName(){
+    	return lastName;
     }
     
     public void setGender(String newGender){
-
-        this.gender = newGender;
-
+        gender = newGender;
         notifyObserver();
-
+    }
+    
+    public String getGender(){
+    	return gender;
     }
     
     public void setAge(int newAge){
-
-        this.age = newAge;
-
+        age = newAge;
         notifyObserver();
-
     }
 
+    public int getAge(){
+    	return age;
+    }
 
 
 }

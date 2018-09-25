@@ -1,28 +1,44 @@
+package Race;
 
 public class Course extends RaceStuff {
 
-	private String courseName;
-	private double courseDistance;
+
+	
+	private int bibNumber;
+    private String dateAndTime; 
+    private double distanceTraveled;
 	
 	public Course(){
 		super();
-		courseName = "";
-		courseDistance = 0;
+		bibNumber = 0;
+		dateAndTime = "";
+		distanceTraveled = 0;
 		updateType = new ItUpdates();
 	}
 	
-	
-	public String getCourseName(){
-		return courseName;
-	}
-	public void setCourseName(String newCourseName){
-		 courseName  = newCourseName;
-	}
-	
-	public double getCourseDistance(){
-		return courseDistance;
-	}
-	public void setCourseDistance(double newCourseDistance){
-		courseDistance  = newCourseDistance;
-	}
+	 public void setBibNumber(int newBibNumber){
+	        bibNumber = newBibNumber;
+	    }
+
+	    public int getBibNumber(){
+	        return bibNumber;
+	     }
+	    
+	    public void setDateandTime(String newDateAndTime){
+	        dateAndTime = newDateAndTime;
+	    }
+	    
+	    public String getDateandTime(){
+	    	return dateAndTime;
+	    }
+	 
+	    
+	    public void setDistance(double newDistance){
+	        distanceTraveled = newDistance;
+	    }
+
+	    public double getDistance(){
+	    	return distanceTraveled;
+	    }
+
 }
